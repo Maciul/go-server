@@ -1,1 +1,1 @@
-“web: go-webserver”
+web: go run main.go
