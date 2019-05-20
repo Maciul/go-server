@@ -35,6 +35,7 @@ func main() {
   http.HandleFunc("/", sayHello) 
   http.Handle("/serve-static-files/", http.StripPrefix("/serve-static-files/", http.FileServer(http.Dir("static/"))))
   
+  log.Printf("Listening on %s...\n", port)
   if err := http.ListenAndServe( ":" + port, nil); err != nil {
     panic(err)
   }
